@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "RE13 Remastered"
 include(":app")
- 
+include(":core:database")
