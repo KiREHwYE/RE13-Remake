@@ -4,6 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 
+/**
+ * Represents song information, including fields for title, artist, album, etc.
+ *
+ * @author Michael Gontarev (KiREHwYE)
+ */
 @Entity(tableName = "tracks")
 data class TrackEntity(
     @PrimaryKey(autoGenerate = true)
