@@ -20,4 +20,7 @@ dependencies {
     // Dagger
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
+
+    // KotlinX
+    implementation(libs.kotlinx.coroutines.core)
 }
