@@ -1,4 +1,4 @@
-package com.kire.re13remastered.ui.theme
+package com.kire.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

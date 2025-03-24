@@ -1,4 +1,4 @@
-package com.kire.re13remastered.ui.theme
+package com.kire.ui.theme
 
 import android.app.Activity
 import android.os.Build
