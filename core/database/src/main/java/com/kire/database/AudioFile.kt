@@ -22,6 +22,8 @@ import android.provider.MediaStore
  * @param size Size in bytes, sourced from [MediaStore.Audio.Media.SIZE], stored in [TrackEntity].
  * @param data URI in String format to the audio file's location, constructed from [MediaStore.Audio.Media.DATA], stored as [TrackEntity.data].
  * @param artworkUri URI in String format to the album artwork, constructed using [MediaStore.Audio.Albums.ALBUM_ART] and [albumId].
+ *
+ * @author Michael Gontarev (KiREHwYE)
  */
 data class AudioFile(
     val id: Long = 0,
