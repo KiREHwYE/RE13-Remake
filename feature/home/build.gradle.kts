@@ -37,6 +37,10 @@ android {
 
 dependencies {
 
+    // Модули
+    implementation(project(":core:database"))
+    implementation(project(":core:di"))
+
     // Dagger
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
