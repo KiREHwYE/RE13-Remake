@@ -1,6 +1,6 @@
 package com.kire.database.di
 
-import com.kire.AudioReader
+import com.kire.database.AudioReader
 import com.kire.database.AppDatabase
 import com.kire.database.dao.AlbumDao
 import com.kire.database.dao.PlaylistDao

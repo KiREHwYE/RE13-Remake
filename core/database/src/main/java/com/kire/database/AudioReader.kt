@@ -1,4 +1,4 @@
-package com.kire
+package com.kire.database
 
 import android.content.ContentUris
 import android.content.Context
