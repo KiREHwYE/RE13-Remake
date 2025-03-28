@@ -26,22 +26,9 @@ interface ITrackRepository {
     suspend fun deleteTrack(track: TrackDomain)
 
     /**
-     * Retrieves a track entity by its unique identifier.
-     *
-     * @param id The unique identifier of the track.
-     * @return The [TrackDomain] with the specified [id], or null if no such track exists.
-     */
-    suspend fun getTrackById(id: Int): TrackDomain
-
-    /**
      * Retrieves all track entities from the database as a Flow.
      *
      * @return A [Flow] emitting a list of all [TrackDomain] objects in the database.
      */
     suspend fun getAllTracks(): Flow<List<TrackDomain>>
-
-    /**
-     * Refreshes the database with tracks retrieved from external storage.
-     */
-    suspend fun refreshTracks()
 }
