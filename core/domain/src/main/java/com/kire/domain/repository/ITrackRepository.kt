@@ -39,4 +39,9 @@ interface ITrackRepository {
      * @return A [Flow] emitting a list of all [TrackDomain] objects in the database.
      */
     suspend fun getAllTracks(): Flow<List<TrackDomain>>
+
+    /**
+     * Refreshes the database with tracks retrieved from external storage.
+     */
+    suspend fun refreshTracks()
 }
