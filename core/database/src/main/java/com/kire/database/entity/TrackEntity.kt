@@ -19,6 +19,6 @@ data class TrackEntity(
     val dateModified: Long,
     val bitrate: Long,
     val size: Long,
-    val data: Uri,
-    val artworkUri: Uri,
+    val data: String,
+    val artworkUri: String,
 )

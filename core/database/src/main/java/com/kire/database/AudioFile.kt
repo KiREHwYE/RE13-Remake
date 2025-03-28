@@ -20,8 +20,8 @@ import android.provider.MediaStore
  * @param dateModified Last modification timestamp in seconds since epoch, sourced from [MediaStore.Audio.Media.DATE_MODIFIED].
  * @param bitrate Bitrate in bits per second, sourced from [MediaStore.Audio.Media.BITRATE], stored in [TrackEntity].
  * @param size Size in bytes, sourced from [MediaStore.Audio.Media.SIZE], stored in [TrackEntity].
- * @param data URI to the audio file's location, constructed from [MediaStore.Audio.Media.DATA], stored as [TrackEntity.data].
- * @param artworkUri URI to the album artwork, constructed using [MediaStore.Audio.Albums.ALBUM_ART] and [albumId].
+ * @param data URI in String format to the audio file's location, constructed from [MediaStore.Audio.Media.DATA], stored as [TrackEntity.data].
+ * @param artworkUri URI in String format to the album artwork, constructed using [MediaStore.Audio.Albums.ALBUM_ART] and [albumId].
  */
 data class AudioFile(
     val id: Long = 0,
@@ -35,6 +35,6 @@ data class AudioFile(
     val dateModified: Long,
     val bitrate: Long,
     val size: Long,
-    val data: Uri,
-    val artworkUri: Uri,
+    val data: String,
+    val artworkUri: String,
 )

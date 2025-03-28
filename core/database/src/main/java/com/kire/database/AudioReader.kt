@@ -112,11 +112,11 @@ class AudioReader @Inject constructor(
                         dateModified = dateModified,
                         size = size,
                         bitrate = bitrate,
-                        data = Uri.parse(data),
+                        data = data,
                         artworkUri = ContentUris.withAppendedId(
                             MediaStore.Audio.Albums.EXTERNAL_CONTENT_URI,
                             albumId
-                        )
+                        ).toString()
                     )
                 )
             }
