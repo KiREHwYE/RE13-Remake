@@ -1,4 +1,4 @@
-package com.kire.home.domain
+package com.kire.home.domain.usecase
 
 import com.kire.home.domain.repository.ITrackRepository
 import javax.inject.Inject
