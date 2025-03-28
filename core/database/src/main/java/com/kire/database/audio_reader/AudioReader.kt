@@ -1,8 +1,7 @@
-package com.kire.database
+package com.kire.database.audio_reader
 
 import android.content.ContentUris
 import android.content.Context
-import android.net.Uri
 import android.provider.MediaStore
 import javax.inject.Inject
 
