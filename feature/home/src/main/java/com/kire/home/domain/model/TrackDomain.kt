@@ -1,4 +1,4 @@
-package com.kire.domain.model
+package com.kire.home.domain.model
 
 /**
  * Represents song information, including fields for title, artist, album, etc.

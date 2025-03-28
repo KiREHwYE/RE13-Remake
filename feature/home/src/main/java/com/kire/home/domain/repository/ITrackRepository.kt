@@ -1,6 +1,6 @@
-package com.kire.domain.repository
+package com.kire.home.domain.repository
 
-import com.kire.domain.model.TrackDomain
+import com.kire.home.domain.model.TrackDomain
 import kotlinx.coroutines.flow.Flow
 
 /**
