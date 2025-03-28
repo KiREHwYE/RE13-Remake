@@ -16,7 +16,7 @@ import kotlinx.coroutines.CoroutineDispatcher
  * This module defines how to instantiate and provide implementations of [ITrackRepository], [ITrackUseCases],
  * and [GetAllTracksUseCase].
  *
- * @author Михаил Гонтарев (KiREHwYE)
+ * @author Michael Gontarev (KiREHwYE)
  */
 @Module
 object HomeModule {
