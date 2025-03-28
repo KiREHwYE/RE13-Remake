@@ -12,6 +12,8 @@ import javax.inject.Inject
  * constructing a list of [AudioFile]. It filters results to include only audio files using a MIME_TYPE constraint.
  *
  * @param context The application context used to access the [ContentResolver] for querying MediaStore.
+ *
+ * @author Michael Gontarev (KiREHwYE)
  */
 class AudioReader @Inject constructor(
     private val context: Context
