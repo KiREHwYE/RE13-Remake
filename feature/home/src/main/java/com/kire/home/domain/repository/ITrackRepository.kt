@@ -26,9 +26,9 @@ interface ITrackRepository {
     suspend fun deleteTrack(track: TrackDomain)
 
     /**
-     * Retrieves all track entities from the database as a Flow.
+     * Retrieves all track entities from the database as a [Flow].
      *
-     * @return A [Flow] emitting a list of all [TrackDomain] objects in the database.
+     * @return A list of all [TrackDomain] objects in the database.
      */
-    suspend fun getAllTracks(): Flow<List<TrackDomain>>
+     fun getAllTracks(): Flow<List<TrackDomain>>
 }
