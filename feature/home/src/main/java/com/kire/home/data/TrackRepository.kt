@@ -9,6 +9,7 @@ import com.kire.home.domain.repository.ITrackRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 /**
@@ -36,7 +37,9 @@ class TrackRepository @Inject constructor(
      * @param track The [TrackDomain] to upsert.
      */
     override suspend fun upsertTrack(track: TrackDomain) {
-        trackDao.upsertTrack(track.toEntity())
+        return withContext(coroutineDispatcher) {
+            trackDao.upsertTrack(track.toEntity())
+        }
     }
 
     /**
@@ -47,18 +50,20 @@ class TrackRepository @Inject constructor(
      * @param track The [TrackDomain] to delete.
      */
     override suspend fun deleteTrack(track: TrackDomain) {
-        trackDao.deleteTrack(track.toEntity())
+        return withContext(coroutineDispatcher) {
+            trackDao.deleteTrack(track.toEntity())
+        }
     }
 
     /**
-     * Retrieves all track entities from the database as a Flow.
-     * This suspend function fetches a [Flow] of [TrackEntity] lists from [TrackDao.getAllTracks],
+     * Retrieves all track entities from the database as a [Flow].
+     * This function fetches a [Flow] of [TrackEntity] lists from [TrackDao.getAllTracks],
      * maps each list to a list of [TrackDomain] objects using [List<TrackEntity>.toDomain], and returns
      * the resulting [Flow].
      *
-     * @return A [Flow] emitting a list of all [TrackDomain] objects in the database.
+     * @return A list of all [TrackDomain] objects in the database.
      */
-    override suspend fun getAllTracks(): Flow<List<TrackDomain>> {
+    override fun getAllTracks(): Flow<List<TrackDomain>> {
         return trackDao.getAllTracks().map {
             it.toDomain()
         }
