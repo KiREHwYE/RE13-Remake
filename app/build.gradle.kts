@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
+    // KSP
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -40,6 +43,10 @@ android {
 }
 
 dependencies {
+
+    // Dagger
+    implementation(libs.dagger)
+    ksp(libs.dagger.compiler)
 
     // Модули
     implementation(project(":core:ui"))
