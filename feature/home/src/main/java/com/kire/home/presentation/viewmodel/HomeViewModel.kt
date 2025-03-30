@@ -9,18 +9,16 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 /**
  * ViewModel for the home feature, managing the state of track data for the UI.
- * This class uses [ITrackUseCases] for track-related operations. It leverages Dagger for dependency injection
- * and initializes track retrieval upon creation, ensuring the UI stays updated with the latest track list.
+ * This class uses [ITrackUseCases] for track-related operations.
  *
- * @param trackUseCases The [ITrackUseCases] instance providing track-related use cases, injected via Dagger.
+ * @param trackUseCases The [ITrackUseCases] instance providing track-related use cases.
  *
  * @author Michael Gontarev (KiREHwYE)
  */
-class HomeViewModel @Inject constructor(
+class HomeViewModel(
     private val trackUseCases: ITrackUseCases
 ) : ViewModel() {
 
