@@ -7,7 +7,7 @@ import com.kire.home.domain.repository.ITrackRepository
 import com.kire.home.domain.usecase.GetAllTracksUseCase
 import com.kire.home.domain.usecase.ITrackUseCases
 import com.kire.home.domain.usecase.TrackUseCases
-import com.kire.home.presentation.viewmodel.HomeViewModel
+import com.kire.home.presentation.viewmodel.HomeViewModelFactory
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.CoroutineDispatcher
@@ -15,7 +15,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 /**
  * Dagger module providing dependencies for the home feature, including track-related use cases and repositories.
  * This module defines how to instantiate and provide implementations of [ITrackRepository], [ITrackUseCases],
- * [GetAllTracksUseCase] and [HomeViewModel].
+ * [GetAllTracksUseCase] and [HomeViewModelFactory].
  *
  * @author Michael Gontarev (KiREHwYE)
  */
@@ -66,15 +66,15 @@ object HomeModule {
     }
 
     /**
-     * Provides a [HomeViewModel] instance for the home feature UI.
-     * Creates a [HomeViewModel] using the injected [ITrackUseCases], enabling track data management
-     * for presentation in the UI layer.
+     * Provides a [HomeViewModelFactory] for creating HomeViewModel instances.
+     * Creates a [HomeViewModelFactory] using the injected [ITrackUseCases].
      *
      * @param trackUseCases The [ITrackUseCases] instance providing track-related use cases.
-     * @return A [HomeViewModel] instance.
+     *
+     * @return A [HomeViewModelFactory] instance.
      */
     @Provides
-    fun provideHomeViewModel(trackUseCases: ITrackUseCases): HomeViewModel {
-        return HomeViewModel(trackUseCases)
+    fun provideHomeViewModelFactory(trackUseCases: ITrackUseCases): HomeViewModelFactory {
+        return HomeViewModelFactory(trackUseCases)
     }
 }
