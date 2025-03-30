@@ -4,7 +4,7 @@ import com.kire.database.di.DatabaseComponent
 import com.kire.di.CoroutineModule
 import com.kire.home.domain.repository.ITrackRepository
 import com.kire.home.domain.usecase.ITrackUseCases
-import com.kire.home.presentation.viewmodel.HomeViewModel
+import com.kire.home.presentation.viewmodel.HomeViewModelFactory
 import dagger.Component
 import javax.inject.Singleton
 
@@ -12,7 +12,7 @@ import javax.inject.Singleton
  * Dagger component providing dependencies for the home feature's track management functionality.
  * This singleton component integrates [HomeModule] and [CoroutineModule] for module-provided dependencies
  * and depends on [DatabaseComponent] for database-related dependencies, offering access to [ITrackRepository],
- * [ITrackUseCases] and [HomeViewModel] implementations. It ensures a single instance of provided objects throughout the
+ * [ITrackUseCases] and [HomeViewModelFactory] implementations. It ensures a single instance of provided objects throughout the
  * application lifecycle, facilitating track-related operations in the home feature.
  *
  * @author Michael Gontarev (KiREHwYE)
@@ -36,9 +36,9 @@ interface HomeComponent {
     fun provideTrackUseCases(): ITrackUseCases
 
     /**
-     * Provides a [HomeViewModel] instance for the home feature UI.
+     * Provides a [HomeViewModelFactory] for creating HomeViewModel instances.
      *
-     * @return The [HomeViewModel] instance.
+     * @return The [HomeViewModelFactory] instance.
      */
-    fun provideHomeViewModel(): HomeViewModel
+    fun provideHomeViewModelFactory(): HomeViewModelFactory
 }
