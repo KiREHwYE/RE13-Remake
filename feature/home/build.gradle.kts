@@ -48,6 +48,7 @@ dependencies {
     // Модули
     implementation(project(":core:database"))
     implementation(project(":core:di"))
+    implementation(project(":core:ui"))
 
     // Dagger
     implementation(libs.dagger)
