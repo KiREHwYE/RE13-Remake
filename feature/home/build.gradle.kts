@@ -26,6 +26,14 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1"
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -45,6 +53,9 @@ dependencies {
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.ui.graphics.android)
+    implementation(libs.androidx.material3.android)
     implementation(libs.androidx.lifecycle.viewmodel.android)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
