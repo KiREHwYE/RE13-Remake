@@ -26,6 +26,15 @@ interface TrackDao {
     suspend fun upsertTrack(track: TrackEntity)
 
     /**
+     * Inserts or updates a list of track entities in the database.
+     * If a track with the same primary key already exists, it will be updated; otherwise, it will be inserted.
+     *
+     * @param tracks The list of [TrackEntity] objects to upsert.
+     */
+    @Upsert
+    suspend fun upsertTracks(tracks: List<TrackEntity>)
+
+    /**
      * Deletes a track entity from the database.
      *
      * @param track The [TrackEntity] to delete.
