@@ -29,6 +29,15 @@ interface ArtistDao {
     suspend fun upsertArtist(artistEntity: ArtistEntity)
 
     /**
+     * Inserts or updates a list of artist entities in the database.
+     * If an artist with the same primary key already exists, it will be updated; otherwise, it will be inserted.
+     *
+     * @param artists The list of [ArtistEntity] objects to upsert.
+     */
+    @Upsert
+    suspend fun upsertArtists(artists: List<ArtistEntity>)
+
+    /**
      * Deletes an artist entity from the database.
      *
      * @param artist The [ArtistEntity] to delete.
