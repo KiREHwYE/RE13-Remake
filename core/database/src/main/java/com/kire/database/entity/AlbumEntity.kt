@@ -1,6 +1,7 @@
 package com.kire.database.entity
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 /**
@@ -13,7 +14,18 @@ import androidx.room.PrimaryKey
  *
  * @author Michael Gontarev (KiREHwYE)
  */
-@Entity(tableName = "albums")
+@Entity(
+    tableName = "albums",
+    foreignKeys = [
+        ForeignKey(
+            entity = ArtistEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["artistId"],
+            onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
+        )
+    ]
+)
 data class AlbumEntity(
     @PrimaryKey
     val id: Long = 0,
