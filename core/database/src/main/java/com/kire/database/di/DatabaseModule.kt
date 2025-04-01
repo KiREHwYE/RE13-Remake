@@ -2,7 +2,6 @@ package com.kire.database.di
 
 import android.content.Context
 import androidx.room.Room
-import com.kire.database.audio_reader.AudioReader
 import com.kire.database.AppDatabase
 import com.kire.database.dao.AlbumDao
 import com.kire.database.dao.ArtistDao
@@ -78,16 +77,5 @@ object DatabaseModule {
     @Provides
     fun provideArtistDao(db: AppDatabase): ArtistDao {
         return db.artistDao()
-    }
-
-    /**
-     * Provides [AudioReader] class that reads audio file metadata from the device's media store for storage in the local database.
-     *
-     * @param context The [Context] used to initialize the database, typically the application context.
-     * @return An instance of [AudioReader] for managing audio files.
-     */
-    @Provides
-    fun provideAudioReader(context: Context): AudioReader {
-        return AudioReader(context)
     }
 }

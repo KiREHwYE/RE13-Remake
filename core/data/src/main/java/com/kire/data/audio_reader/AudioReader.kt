@@ -1,4 +1,4 @@
-package com.kire.database.audio_reader
+package com.kire.data.audio_reader
 
 import android.content.ContentUris
 import android.content.Context

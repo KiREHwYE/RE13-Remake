@@ -1,6 +1,5 @@
 package com.kire.database.di
 
-import com.kire.database.audio_reader.AudioReader
 import com.kire.database.AppDatabase
 import com.kire.database.dao.AlbumDao
 import com.kire.database.dao.ArtistDao
@@ -52,12 +51,4 @@ interface DatabaseComponent {
      * @return An instance of [ArtistDao].
      */
     fun getArtistDao(): ArtistDao
-
-
-    /**
-     * Provides the [AudioReader] instance.
-     *
-     * @return An instance of [AudioReader].
-     */
-    fun getAudioReader(): AudioReader
 }
