@@ -3,8 +3,10 @@ package com.kire.database.dao
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Upsert
 import com.kire.database.entity.AlbumEntity
+import com.kire.database.model.AlbumWithTracks
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -49,4 +51,14 @@ interface AlbumDao {
      */
     @Query("SELECT * FROM albums WHERE id = :albumId")
     suspend fun getAlbumById(albumId: Long): AlbumEntity?
+
+    /**
+     * Retrieves an album and its associated tracks by album ID.
+     *
+     * @param albumId The unique identifier of the album.
+     * @return A [Flow] emitting the [AlbumWithTracks] object, or null if not found.
+     */
+    @Transaction
+    @Query("SELECT * FROM albums WHERE id = :albumId")
+    fun getAlbumWithTracks(albumId: Long): Flow<AlbumWithTracks>
 }
