@@ -28,6 +28,15 @@ interface AlbumDao {
     suspend fun upsertAlbum(album: AlbumEntity)
 
     /**
+     * Inserts or updates a list of album entities in the database.
+     * If an album with the same primary key already exists, it will be updated; otherwise, it will be inserted.
+     *
+     * @param albums The list of [AlbumEntity] objects to upsert.
+     */
+    @Upsert
+    suspend fun upsertAlbums(albums: List<AlbumEntity>)
+
+    /**
      * Deletes an album entity from the database.
      *
      * @param album The [AlbumEntity] to delete.
