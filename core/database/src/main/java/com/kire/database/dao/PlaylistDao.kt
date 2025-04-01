@@ -2,11 +2,14 @@ package com.kire.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Upsert
 import com.kire.database.entity.PlaylistEntity
 import com.kire.database.entity.PlaylistTrackCrossRef
-import com.kire.database.entity.TrackEntity
+import com.kire.database.model.PlaylistWithTracks
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -40,7 +43,7 @@ interface PlaylistDao {
      *
      * @param ref The [PlaylistTrackCrossRef] representing the relationship between a playlist and tracks.
      */
-    @Upsert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addTrackToPlaylist(ref: PlaylistTrackCrossRef)
 
     /**
@@ -52,16 +55,12 @@ interface PlaylistDao {
     suspend fun deleteTrackFromPlaylist(ref: PlaylistTrackCrossRef)
 
     /**
-     * Retrieves all tracks associated with a specific playlist as a Flow.
-     * Joins the tracks table with the cross-reference table to filter tracks by playlist ID.
+     * Retrieves a playlist and its associated tracks by playlist ID.
      *
      * @param playlistId The unique identifier of the playlist.
-     * @return A [Flow] emitting a list of [TrackEntity] objects associated with the specified [playlistId].
+     * @return A [Flow] emitting a [PlaylistWithTracks].
      */
-    @Query("""
-        SELECT * FROM tracks 
-        INNER JOIN PlaylistTrackCrossRef ON tracks.id = PlaylistTrackCrossRef.trackId
-        WHERE PlaylistTrackCrossRef.playlistId = :playlistId
-    """)
-    fun getTracksByPlaylist(playlistId: Long): Flow<List<TrackEntity>>
+    @Transaction
+    @Query("SELECT * FROM playlists WHERE id = :playlistId")
+    fun getPlaylistWithTracks(playlistId: Long): Flow<PlaylistWithTracks>
 }
