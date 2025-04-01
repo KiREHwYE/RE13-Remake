@@ -6,11 +6,11 @@ import com.kire.database.dao.AlbumDao
 import com.kire.database.dao.ArtistDao
 import com.kire.database.dao.PlaylistDao
 import com.kire.database.dao.TrackDao
-import com.kire.database.entity.AlbumEntity
-import com.kire.database.entity.ArtistEntity
-import com.kire.database.entity.PlaylistEntity
-import com.kire.database.entity.PlaylistTrackCrossRef
-import com.kire.database.entity.TrackEntity
+import com.kire.database.model.entity.AlbumEntity
+import com.kire.database.model.entity.ArtistEntity
+import com.kire.database.model.entity.PlaylistEntity
+import com.kire.database.model.entity.PlaylistTrackCrossRef
+import com.kire.database.model.entity.TrackEntity
 
 /**
  * The main Room database for the application.

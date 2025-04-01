@@ -1,4 +1,4 @@
-package com.kire.database.entity
+package com.kire.database.model.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

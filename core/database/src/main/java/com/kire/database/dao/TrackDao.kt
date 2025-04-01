@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
-import com.kire.database.entity.TrackEntity
+import com.kire.database.model.entity.TrackEntity
 import kotlinx.coroutines.flow.Flow
 
 /**

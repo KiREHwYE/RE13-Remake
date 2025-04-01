@@ -5,7 +5,7 @@ import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.kire.database.entity.AlbumEntity
+import com.kire.database.model.entity.AlbumEntity
 import com.kire.database.model.AlbumWithTracks
 import kotlinx.coroutines.flow.Flow
 

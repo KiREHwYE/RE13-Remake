@@ -7,8 +7,8 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Upsert
-import com.kire.database.entity.PlaylistEntity
-import com.kire.database.entity.PlaylistTrackCrossRef
+import com.kire.database.model.entity.PlaylistEntity
+import com.kire.database.model.entity.PlaylistTrackCrossRef
 import com.kire.database.model.PlaylistWithTracks
 import kotlinx.coroutines.flow.Flow
 

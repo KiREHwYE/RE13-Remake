@@ -2,8 +2,8 @@ package com.kire.database.model
 
 import androidx.room.Embedded
 import androidx.room.Relation
-import com.kire.database.entity.ArtistEntity
-import com.kire.database.entity.TrackEntity
+import com.kire.database.model.entity.ArtistEntity
+import com.kire.database.model.entity.TrackEntity
 
 /**
  * Represents an artist with its associated tracks, retrieved from the database.

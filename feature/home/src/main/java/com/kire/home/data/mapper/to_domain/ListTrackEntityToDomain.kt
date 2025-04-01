@@ -1,6 +1,6 @@
 package com.kire.home.data.mapper.to_domain
 
-import com.kire.database.entity.TrackEntity
+import com.kire.database.model.entity.TrackEntity
 
 /**
  * Converts a list of [TrackEntity] objects from the data layer into a list of [TrackDomain] objects for the domain layer.

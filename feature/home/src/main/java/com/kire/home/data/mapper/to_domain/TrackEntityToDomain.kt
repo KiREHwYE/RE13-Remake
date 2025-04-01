@@ -1,6 +1,6 @@
 package com.kire.home.data.mapper.to_domain
 
-import com.kire.database.entity.TrackEntity
+import com.kire.database.model.entity.TrackEntity
 import com.kire.home.domain.model.TrackDomain
 
 /**
