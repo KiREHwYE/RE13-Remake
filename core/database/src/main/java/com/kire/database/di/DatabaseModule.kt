@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.kire.database.audio_reader.AudioReader
 import com.kire.database.AppDatabase
 import com.kire.database.dao.AlbumDao
+import com.kire.database.dao.ArtistDao
 import com.kire.database.dao.PlaylistDao
 import com.kire.database.dao.TrackDao
 import dagger.Module
@@ -66,6 +67,17 @@ object DatabaseModule {
     @Provides
     fun provideAlbumDao(db: AppDatabase): AlbumDao {
         return db.albumDao()
+    }
+
+    /**
+     * Provides the data access object for artist-related operations.
+     *
+     * @param db The [AppDatabase] instance from which the DAO is obtained.
+     * @return An instance of [ArtistDao] for managing artist data.
+     */
+    @Provides
+    fun provideArtistDao(db: AppDatabase): ArtistDao {
+        return db.artistDao()
     }
 
     /**
