@@ -1,13 +1,14 @@
 package com.kire.database.entity
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
 
 /**
  * Represents song information, including fields for title, artist, album, etc.
  *
  * @param id Unique identifier of the audio file. Defaults to 0 if not specified.
- * @param artistId Identifier of the artist. Nullable and defaults to 0 if unknown.
- * @param albumId Identifier of the album. Nullable and defaults to 0 if unknown.
+ * @param artistId Identifier of the artist. Nullable and defaults to null if unknown.
+ * @param albumId Identifier of the album. Nullable and defaults to null if unknown.
  * @param title Title of the audio file.
  * @param lyrics Lyrics of the audio file, nullable and defaults to null.
  * @param duration Duration in milliseconds.
@@ -19,11 +20,29 @@ import androidx.room.Entity
  *
  * @author Michael Gontarev (KiREHwYE)
  */
-@Entity(tableName = "tracks")
+@Entity(
+    tableName = "tracks",
+    foreignKeys = [
+        ForeignKey(
+            entity = ArtistEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["artistId"],
+            onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
+        ),
+        ForeignKey(
+            entity = AlbumEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["albumId"],
+            onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
+        )
+    ]
+)
 data class TrackEntity(
     val id: Long = 0,
-    val artistId: Long? = 0,
-    val albumId: Long? = 0,
+    val artistId: Long? = null,
+    val albumId: Long? = null,
     val title: String,
     val lyrics: String? = null,
     val duration: Long,
