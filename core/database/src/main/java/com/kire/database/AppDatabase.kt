@@ -3,6 +3,7 @@ package com.kire.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.kire.database.dao.AlbumDao
+import com.kire.database.dao.ArtistDao
 import com.kire.database.dao.PlaylistDao
 import com.kire.database.dao.TrackDao
 import com.kire.database.entity.AlbumEntity
@@ -45,4 +46,11 @@ abstract class AppDatabase : RoomDatabase() {
      * @return An instance of [PlaylistDao].
      */
     abstract fun playlistDao(): PlaylistDao
+
+    /**
+     * Provides access to the [ArtistDao] for managing artist-related data.
+     *
+     * @return An instance of [ArtistDao].
+     */
+    abstract fun artistDao(): ArtistDao
 }
