@@ -4,8 +4,8 @@ package com.kire.home.presentation.model
  * Represents song information, including fields for title, artist, album, etc.
  *
  * @param id Unique identifier of the audio file. Defaults to 0 if not specified.
- * @param artistId Identifier of the artist. Nullable and defaults to 0 if unknown.
- * @param albumId Identifier of the album. Nullable and defaults to 0 if unknown.
+ * @param artistName What artist calls himself.
+ * @param albumTitle Title of the album this song related to.
  * @param title Title of the audio file.
  * @param lyrics Lyrics of the audio file, nullable and defaults to null.
  * @param duration Duration in milliseconds.
@@ -19,8 +19,8 @@ package com.kire.home.presentation.model
  */
 data class Track(
     val id: Long = 0,
-    val artistId: Long? = 0,
-    val albumId: Long? = 0,
+    val artistName: String,
+    val albumTitle: String,
     val title: String,
     val lyrics: String? = null,
     val duration: Long,
