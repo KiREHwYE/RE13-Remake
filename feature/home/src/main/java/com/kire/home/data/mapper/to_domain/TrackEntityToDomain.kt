@@ -1,23 +1,24 @@
 package com.kire.home.data.mapper.to_domain
 
+import com.kire.database.model.TrackWithAlbumAndArtist
 import com.kire.database.model.entity.TrackEntity
 import com.kire.home.domain.model.TrackDomain
 
 /**
- * Converts a [TrackEntity] from the data layer into a [TrackDomain] for the domain layer.
- * This extension function maps all fields of the [TrackEntity] to a new [TrackDomain] instance,
+ * Converts a [TrackWithAlbumAndArtist] from the data layer into a [TrackDomain] for the domain layer.
+ * This extension function maps all fields of the [TrackWithAlbumAndArtist] to a new [TrackDomain] instance,
  * ensuring a seamless transition between the database representation and the platform-independent
  * domain model used for business logic
  *
- * @receiver The [TrackEntity] instance to be converted.
- * @return A [TrackDomain] instance with fields mapped from this [TrackEntity].
+ * @receiver The [TrackWithAlbumAndArtist] instance to be converted.
+ * @return A [TrackDomain] instance with fields mapped from this [TrackWithAlbumAndArtist].
  *
  * @author Michael Gontarev (KiREHwYE)
  */
-fun TrackEntity.toDomain() = TrackDomain(
+fun TrackWithAlbumAndArtist.toDomain() = TrackDomain(
     id = this.id,
-    artistId = this.artistId,
-    albumId = this.albumId,
+    artistName = this.artistName,
+    albumTitle = this.albumTitle,
     title = this.title,
     lyrics = this.lyrics,
     duration = this.duration,
