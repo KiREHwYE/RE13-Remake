@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
 import com.kire.home.presentation.viewmodel.HomeViewModel
 import com.kire.ui.Dimens.Padding.vertical1
 import com.kire.ui.composable.BaseListItem
@@ -20,12 +21,14 @@ import com.kire.ui.composable.BaseListItem
  *
  * @param homeViewModel The [HomeViewModel] instance providing the track data as a [Flow] of
  *                      [Track] objects.
+ * @param navController NavController for navigation.
  *
  * @author Michael Gontarev (KiREHwYE)
  */
 @Composable
 fun HomeScreen(
-    homeViewModel: HomeViewModel
+    homeViewModel: HomeViewModel,
+    navController: NavController
 ) {
     val tracks by homeViewModel.tracks.collectAsStateWithLifecycle()
 
