@@ -3,7 +3,6 @@ package com.kire.database.dao
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
-import androidx.room.Transaction
 import androidx.room.Upsert
 import com.kire.database.model.TrackWithAlbumAndArtist
 import com.kire.database.model.entity.TrackEntity
@@ -57,9 +56,15 @@ interface TrackDao {
      * Retrieves all track entities with their associated
      * album and artist details from the database as a Flow.
      *
-     * @return A [Flow] emitting a list of all [TrackEntity] objects in the database.
+     * @return A [Flow] emitting a list of all [TrackWithAlbumAndArtist] objects in the database.
      */
-    @Transaction
-    @Query("SELECT * FROM tracks")
+    @Query("""
+        SELECT tracks.id, tracks.title, albums.title AS albumTitle, artists.name AS artistName, 
+               tracks.duration, tracks.lyrics, tracks.dateModified AS dateModified, 
+               tracks.bitrate, tracks.size, tracks.data, tracks.artworkUri AS artworkUri
+        FROM tracks
+        LEFT JOIN albums ON tracks.albumId = albums.id
+        LEFT JOIN artists ON tracks.artistId = artists.id
+    """)
     fun getAllTracksWithAlbumAndArtist(): Flow<List<TrackWithAlbumAndArtist>>
 }
