@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
  * Represents song artist information
 
  * @param id Unique identifier of artist. Defaults to 0 if not specified.
- * @param artist What artist calls himself, name or pseudonym
+ * @param name What artist calls himself, name or pseudonym.
  *
  * @author Michael Gontarev (KiREHwYE)
  */
@@ -15,5 +15,5 @@ import androidx.room.PrimaryKey
 data class ArtistEntity(
     @PrimaryKey
     val id: Long = 0,
-    val artist: String
+    val name: String
 )
