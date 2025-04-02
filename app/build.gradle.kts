@@ -50,6 +50,7 @@ dependencies {
 
     // Модули
     implementation(project(":core:ui"))
+    implementation(project(":feature:home"))
 
     // Jetpack Navigation
     implementation(libs.androidx.navigation.compose)
