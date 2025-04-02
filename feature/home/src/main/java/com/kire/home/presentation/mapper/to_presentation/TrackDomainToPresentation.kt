@@ -14,8 +14,8 @@ import com.kire.home.presentation.model.Track
  */
 fun TrackDomain.toPresentation() = Track(
     id = this.id,
-    artistId = this.artistId,
-    albumId = this.albumId,
+    artistName = this.artistName,
+    albumTitle = this.albumTitle,
     title = this.title,
     lyrics = this.lyrics,
     duration = this.duration,
