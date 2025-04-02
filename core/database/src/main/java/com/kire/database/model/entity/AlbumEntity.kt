@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
  *
  * @param id Unique identifier of album. Defaults to 0 if not specified.
  * @param artistId Identifier of the artist. Nullable and defaults to 0 if unknown.
- * @param title Title of the audio file.
+ * @param title Title of the album.
  * @param artworkUri URI in String format to the album artwork.
  *
  * @author Michael Gontarev (KiREHwYE)
