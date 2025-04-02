@@ -50,6 +50,8 @@ dependencies {
 
     // Модули
     implementation(project(":core:ui"))
+    implementation(project(":core:data"))
+    implementation(project(":core:database"))
     implementation(project(":feature:home"))
 
     // Jetpack Navigation
