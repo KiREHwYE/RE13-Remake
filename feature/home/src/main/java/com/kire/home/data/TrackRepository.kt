@@ -57,14 +57,14 @@ class TrackRepository @Inject constructor(
 
     /**
      * Retrieves all track entities from the database as a [Flow].
-     * This function fetches a [Flow] of [TrackEntity] lists from [TrackDao.getAllTracks],
+     * This function fetches a [Flow] of [TrackEntity] lists from [TrackDao.getAllTracksWithAlbumAndArtist],
      * maps each list to a list of [TrackDomain] objects using [List<TrackEntity>.toDomain], and returns
      * the resulting [Flow].
      *
      * @return A list of all [TrackDomain] objects in the database.
      */
     override fun getAllTracks(): Flow<List<TrackDomain>> {
-        return trackDao.getAllTracks().map {
+        return trackDao.getAllTracksWithAlbumAndArtist().map {
             it.toDomain()
         }
     }
