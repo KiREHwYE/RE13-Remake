@@ -54,6 +54,9 @@ dependencies {
     implementation(libs.dagger)
     ksp(libs.dagger.compiler)
 
+    // Jetpack Navigation
+    implementation(libs.androidx.navigation.compose)
+
     implementation(libs.androidx.material3)
     implementation(libs.androidx.ui.graphics.android)
     implementation(libs.androidx.material3.android)
