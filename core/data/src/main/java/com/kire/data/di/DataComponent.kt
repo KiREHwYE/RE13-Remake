@@ -1,6 +1,7 @@
 package com.kire.data.di
 
 import com.kire.data.DatabaseUpdater
+import com.kire.database.di.DatabaseComponent
 import dagger.Component
 
 /**
@@ -11,7 +12,7 @@ import dagger.Component
  *
  * @author Michael Gontarev (KiREHwYE)
  */
-@Component
+@Component(dependencies = [DatabaseComponent::class])
 interface DataComponent {
 
     /**
