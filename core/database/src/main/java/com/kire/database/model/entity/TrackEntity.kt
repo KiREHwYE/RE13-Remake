@@ -2,6 +2,7 @@ package com.kire.database.model.entity
 
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.PrimaryKey
 
 /**
  * Represents song information, including fields for title, artist, album, etc.
@@ -40,6 +41,7 @@ import androidx.room.ForeignKey
     ]
 )
 data class TrackEntity(
+    @PrimaryKey
     val id: Long = 0,
     val artistId: Long? = null,
     val albumId: Long? = null,
