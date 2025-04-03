@@ -1,8 +1,12 @@
 package com.kire.data.di
 
+import android.content.Context
 import com.kire.data.DatabaseUpdater
-import com.kire.database.di.DatabaseComponent
+import com.kire.database.di.DatabaseModule
+import com.kire.di.CoroutineModule
+import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Singleton
 
 /**
  * Dagger component that provides data-related dependencies in the `:core:data` module.
@@ -12,7 +16,8 @@ import dagger.Component
  *
  * @author Michael Gontarev (KiREHwYE)
  */
-@Component(dependencies = [DatabaseComponent::class])
+@Singleton
+@Component(modules = [DatabaseModule::class, CoroutineModule::class])
 interface DataComponent {
 
     /**
@@ -22,4 +27,11 @@ interface DataComponent {
      * @return The [DatabaseUpdater] instance configured with dependencies from [DataModule].
      */
     fun provideDatabaseUpdater(): DatabaseUpdater
+
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun bindContext(context: Context): Builder
+        fun build(): DataComponent
+    }
 }
