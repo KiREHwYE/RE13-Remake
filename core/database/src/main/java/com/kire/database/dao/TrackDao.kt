@@ -59,7 +59,7 @@ interface TrackDao {
      * @return A [Flow] emitting a list of all [TrackWithAlbumAndArtist] objects in the database.
      */
     @Query("""
-        SELECT tracks.id, tracks.title, albums.title AS albumTitle, artists.name AS artistName, 
+        SELECT tracks.id, tracks.title, tracks.artistId, tracks.albumId, albums.title AS albumTitle, artists.name AS artistName, 
                tracks.duration, tracks.lyrics, tracks.dateModified AS dateModified, 
                tracks.bitrate, tracks.size, tracks.data, tracks.artworkUri AS artworkUri
         FROM tracks
