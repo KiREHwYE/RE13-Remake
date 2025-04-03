@@ -8,7 +8,9 @@ import com.kire.database.model.entity.TrackEntity
  * Represents a track with its associated album and artist details retrieved from the database.
  * This entity combines data from [TrackEntity], [AlbumEntity], and [ArtistEntity].
  *
- * @param id Unique identifier of the audio file. Defaults to 0 if not specified.
+ * @param id Unique identifier of the audio file.
+ * @param artistId Identifier of the artist.
+ * @param albumId Identifier of the album.
  * @param title Title of the audio file.
  * @param albumTitle Title of the album.
  * @param artistName What the artist calls himself.
@@ -24,6 +26,8 @@ import com.kire.database.model.entity.TrackEntity
  */
 data class TrackWithAlbumAndArtist(
     val id: Long,
+    val artistId: Long,
+    val albumId: Long,
     val title: String,
     val albumTitle: String,
     val artistName: String,
