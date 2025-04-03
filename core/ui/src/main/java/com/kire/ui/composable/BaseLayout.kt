@@ -22,8 +22,8 @@ import com.kire.ui.Dimens.Padding.vertical1
  * @param horizontalPadding Horizontal padding applied to the layout. Defaults to [horizontal1].
  * @param verticalPadding Vertical padding applied to the layout. Defaults to [vertical1].
  * @param contentSpacing Vertical spacing between the layout's children. Defaults to [vertical1].
- * @param topBar A composable lambda that defines the top bar content, such as a toolbar or header.
- * @param bottomBar A composable lambda that defines the bottom bar content, such as a navigation bar.
+ * @param topBar A composable lambda that defines the top bar content, such as a toolbar or header. Defaults to empty lambda.
+ * @param bottomBar A composable lambda that defines the bottom bar content, such as a navigation bar.Defaults to empty lambda.
  * @param content A composable lambda that defines the main content of the layout, displayed between
  *                the top bar and bottom bar.
  *
@@ -35,8 +35,8 @@ fun BaseLayout(
     horizontalPadding: Dp = horizontal1,
     verticalPadding: Dp = vertical1,
     contentSpacing: Dp = vertical1,
-    topBar: @Composable () -> Unit,
-    bottomBar: @Composable () -> Unit,
+    topBar: @Composable () -> Unit = {},
+    bottomBar: @Composable () -> Unit = {},
     content: @Composable () -> Unit
 ) {
     Column(
