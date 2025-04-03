@@ -3,7 +3,9 @@ package com.kire.home.domain.model
 /**
  * Represents song information, including fields for title, artist, album, etc.
  *
- * @param id Unique identifier of the audio file. Defaults to 0 if not specified.
+ * @param id Unique identifier of the audio file.
+ * @param artistId Identifier of the artist.
+ * @param albumId Identifier of the album.
  * @param artistName What artist calls himself.
  * @param albumTitle Title of the album this song related to.
  * @param title Title of the audio file.
@@ -18,7 +20,9 @@ package com.kire.home.domain.model
  * @author Michael Gontarev (KiREHwYE)
  */
 data class TrackDomain(
-    val id: Long = 0,
+    val id: Long,
+    val artistId: Long,
+    val albumId: Long,
     val artistName: String,
     val albumTitle: String,
     val title: String,
