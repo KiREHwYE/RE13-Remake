@@ -1,10 +1,12 @@
 package com.kire.database.di
 
+import android.content.Context
 import com.kire.database.AppDatabase
 import com.kire.database.dao.AlbumDao
 import com.kire.database.dao.ArtistDao
 import com.kire.database.dao.PlaylistDao
 import com.kire.database.dao.TrackDao
+import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
@@ -51,4 +53,11 @@ interface DatabaseComponent {
      * @return An instance of [ArtistDao].
      */
     fun getArtistDao(): ArtistDao
+
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun bindContext(context: Context): Builder
+        fun build(): DatabaseComponent
+    }
 }
