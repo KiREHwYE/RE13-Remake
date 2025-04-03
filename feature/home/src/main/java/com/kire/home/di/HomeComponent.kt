@@ -1,10 +1,13 @@
 package com.kire.home.di
 
+import android.content.Context
 import com.kire.database.di.DatabaseComponent
+import com.kire.database.di.DatabaseModule
 import com.kire.di.CoroutineModule
 import com.kire.home.domain.repository.ITrackRepository
 import com.kire.home.domain.usecase.ITrackUseCases
 import com.kire.home.presentation.viewmodel.HomeViewModelFactory
+import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
@@ -18,7 +21,7 @@ import javax.inject.Singleton
  * @author Michael Gontarev (KiREHwYE)
  */
 @Singleton
-@Component(dependencies = [DatabaseComponent::class], modules = [HomeModule::class, CoroutineModule::class])
+@Component(modules = [HomeModule::class, CoroutineModule::class, DatabaseModule::class])
 interface HomeComponent {
 
     /**
@@ -41,4 +44,11 @@ interface HomeComponent {
      * @return The [HomeViewModelFactory] instance.
      */
     fun provideHomeViewModelFactory(): HomeViewModelFactory
+
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun bindContext(context: Context): Builder
+        fun build(): HomeComponent
+    }
 }
