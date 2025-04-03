@@ -17,6 +17,8 @@ import com.kire.home.domain.model.TrackDomain
  */
 fun TrackWithAlbumAndArtist.toDomain() = TrackDomain(
     id = this.id,
+    artistId = this.artistId,
+    albumId = this.albumId,
     artistName = this.artistName,
     albumTitle = this.albumTitle,
     title = this.title,
