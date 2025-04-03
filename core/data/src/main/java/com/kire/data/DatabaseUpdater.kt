@@ -45,7 +45,7 @@ class DatabaseUpdater @Inject constructor(
                 audioFile.artistId?.let { artistId ->
                     ArtistEntity(
                         id = artistId,
-                        artist = audioFile.artist
+                        name = audioFile.artist
                     )
                 }
             }
