@@ -2,6 +2,8 @@ package com.kire.re13remastered
 
 import android.content.Context
 import com.kire.data.di.DataModule
+import com.kire.database.di.DatabaseModule
+import com.kire.di.CoroutineModule
 import com.kire.home.di.HomeModule
 import com.kire.re13remastered.AppComponent.Builder
 import dagger.BindsInstance
@@ -16,7 +18,7 @@ import javax.inject.Singleton
  * @author Michael Gontarev (KiREHwYE)
  */
 @Singleton
-@Component(modules = [DataModule::class, HomeModule::class])
+@Component(modules = [CoroutineModule::class, DatabaseModule::class, DataModule::class, HomeModule::class])
 interface AppComponent {
     /**
      * Injects dependencies into [MainActivity], providing access to the application's dependency graph.
