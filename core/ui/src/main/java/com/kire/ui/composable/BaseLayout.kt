@@ -10,7 +10,7 @@ import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
-import com.kire.ui.Dimens.Padding.vertical1
+import com.kire.ui.Dimens.Padding.vertical2
 import com.kire.ui.theme.extendedColor
 
 /**
@@ -19,7 +19,7 @@ import com.kire.ui.theme.extendedColor
  * navigation bar, and IME) and applies consistent spacing and padding for a cohesive UI structure.
  *
  * @param modifier The [Modifier] to be applied to the layout. Defaults to an empty [Modifier].
- * @param contentSpacing Vertical spacing between the layout's children. Defaults to [vertical1].
+ * @param contentSpacing Vertical spacing between the layout's children. Defaults to [vertical2].
  * @param topBar A composable lambda that defines the top bar content, such as a toolbar or header. Defaults to empty lambda.
  * @param bottomBar A composable lambda that defines the bottom bar content, such as a navigation bar.Defaults to empty lambda.
  * @param content A composable lambda that defines the main content of the layout, displayed between
@@ -30,7 +30,7 @@ import com.kire.ui.theme.extendedColor
 @Composable
 fun BaseLayout(
     modifier: Modifier = Modifier,
-    contentSpacing: Dp = vertical1,
+    contentSpacing: Dp = vertical2,
     topBar: @Composable () -> Unit = {},
     bottomBar: @Composable () -> Unit = {},
     content: @Composable () -> Unit

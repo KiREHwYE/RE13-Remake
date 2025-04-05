@@ -16,11 +16,13 @@ object Dimens {
      * Defines standard padding values used for spacing UI elements along horizontal and vertical axes.
      */
     object Padding {
-        val horizontal1 = 16.dp
-        val horizontal2 = 24.dp
+        val horizontal1 = 8.dp
+        val horizontal2 = 16.dp
+        val horizontal3 = 24.dp
 
-        val vertical1 = 16.dp
-        val vertical2 = 24.dp
+        val vertical1 = 8.dp
+        val vertical2 = 16.dp
+        val vertical3 = 24.dp
     }
 
     /**

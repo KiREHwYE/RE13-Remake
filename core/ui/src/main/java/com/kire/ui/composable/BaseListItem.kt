@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -20,7 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import coil3.compose.AsyncImage
 import com.kire.ui.Dimens.Corners.rounded1
-import com.kire.ui.Dimens.Padding.horizontal1
+import com.kire.ui.Dimens.Padding.horizontal2
 import com.kire.ui.Dimens.Sizes.artwork1
 import com.kire.ui.R
 import com.kire.ui.theme.extendedType
@@ -57,7 +56,7 @@ fun BaseListItem(
                 onBaseListItemClick()
             },
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(horizontal1)
+        horizontalArrangement = Arrangement.spacedBy(horizontal2)
     ) {
         AsyncImage(
             model = artwork,

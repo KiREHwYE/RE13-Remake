@@ -12,8 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.kire.home.presentation.viewmodel.HomeViewModel
-import com.kire.ui.Dimens.Padding.horizontal1
-import com.kire.ui.Dimens.Padding.vertical1
+import com.kire.ui.Dimens.Padding.horizontal2
+import com.kire.ui.Dimens.Padding.vertical2
 import com.kire.ui.composable.BaseListItem
 
 /**
@@ -38,9 +38,9 @@ fun HomeScreen(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = horizontal1),
-        verticalArrangement = Arrangement.spacedBy(vertical1),
-        contentPadding = PaddingValues(vertical = vertical1)
+            .padding(horizontal = horizontal2),
+        verticalArrangement = Arrangement.spacedBy(vertical2),
+        contentPadding = PaddingValues(vertical = vertical2)
     ) {
         items(tracks, key = { track -> track.id} ) { track ->
 
