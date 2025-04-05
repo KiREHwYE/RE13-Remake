@@ -17,7 +17,10 @@ object Dimens {
      */
     object Padding {
         val horizontal1 = 16.dp
+        val horizontal2 = 24.dp
+
         val vertical1 = 16.dp
+        val vertical2 = 24.dp
     }
 
     /**
