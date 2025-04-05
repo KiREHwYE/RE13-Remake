@@ -1,5 +1,6 @@
 package com.kire.home.presentation.screen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -35,6 +36,7 @@ fun HomeScreen(
     LazyColumn(
         modifier = Modifier
             .fillMaxSize(),
+        verticalArrangement = Arrangement.spacedBy(vertical1),
         contentPadding = PaddingValues(vertical = vertical1)
     ) {
         items(tracks, key = { track -> track.id} ) { track ->
