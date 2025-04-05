@@ -3,7 +3,6 @@ package com.kire.home.presentation.screen
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
@@ -12,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import com.kire.home.presentation.viewmodel.HomeViewModel
-import com.kire.ui.Dimens.Padding.horizontal1
 import com.kire.ui.Dimens.Padding.vertical1
 import com.kire.ui.composable.BaseListItem
 
@@ -37,8 +35,7 @@ fun HomeScreen(
 
     LazyColumn(
         modifier = Modifier
-            .fillMaxSize()
-            .padding(horizontal = horizontal1),
+            .fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(vertical1),
         contentPadding = PaddingValues(vertical = vertical1)
     ) {
