@@ -1,5 +1,6 @@
 package com.kire.ui.composable
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.WindowInsets
@@ -10,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
 import com.kire.ui.Dimens.Padding.vertical1
+import com.kire.ui.theme.extendedColor
 
 /**
  * A foundational layout composable that arranges its children in a vertical column with a top bar,
@@ -35,6 +37,7 @@ fun BaseLayout(
 ) {
     Column(
         modifier = modifier
+            .background(extendedColor.background)
             .windowInsetsPadding(WindowInsets.ime)
             .windowInsetsPadding(WindowInsets.systemBars),
         verticalArrangement = Arrangement.spacedBy(contentSpacing)
