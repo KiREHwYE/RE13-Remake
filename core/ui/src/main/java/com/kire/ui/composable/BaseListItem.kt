@@ -22,6 +22,7 @@ import com.kire.ui.Dimens.Corners.rounded1
 import com.kire.ui.Dimens.Padding.horizontal2
 import com.kire.ui.Dimens.Sizes.artwork1
 import com.kire.ui.R
+import com.kire.ui.theme.extendedColor
 import com.kire.ui.theme.extendedType
 
 /**
@@ -77,12 +78,14 @@ fun BaseListItem(
             Text(
                 text = primaryText,
                 style = extendedType.text1,
+                color = extendedColor.black,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
             Text(
                 text = secondaryText,
                 style = extendedType.text2,
+                color = extendedColor.grey1,
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -91,6 +94,7 @@ fun BaseListItem(
         Icon(
             painter = painterResource(R.drawable.menu),
             contentDescription = "Menu",
+            tint = extendedColor.grey1,
             modifier = Modifier
                 .clickable {
                     onActionButtonClick()
