@@ -19,8 +19,6 @@ import com.kire.ui.Dimens.Padding.vertical1
  * navigation bar, and IME) and applies consistent spacing and padding for a cohesive UI structure.
  *
  * @param modifier The [Modifier] to be applied to the layout. Defaults to an empty [Modifier].
- * @param horizontalPadding Horizontal padding applied to the layout. Defaults to [horizontal1].
- * @param verticalPadding Vertical padding applied to the layout. Defaults to [vertical1].
  * @param contentSpacing Vertical spacing between the layout's children. Defaults to [vertical1].
  * @param topBar A composable lambda that defines the top bar content, such as a toolbar or header. Defaults to empty lambda.
  * @param bottomBar A composable lambda that defines the bottom bar content, such as a navigation bar.Defaults to empty lambda.
@@ -32,8 +30,6 @@ import com.kire.ui.Dimens.Padding.vertical1
 @Composable
 fun BaseLayout(
     modifier: Modifier = Modifier,
-    horizontalPadding: Dp = horizontal1,
-    verticalPadding: Dp = vertical1,
     contentSpacing: Dp = vertical1,
     topBar: @Composable () -> Unit = {},
     bottomBar: @Composable () -> Unit = {},
@@ -42,8 +38,7 @@ fun BaseLayout(
     Column(
         modifier = modifier
             .windowInsetsPadding(WindowInsets.ime)
-            .windowInsetsPadding(WindowInsets.systemBars)
-            .padding(horizontal = horizontalPadding, vertical = verticalPadding),
+            .windowInsetsPadding(WindowInsets.systemBars),
         verticalArrangement = Arrangement.spacedBy(contentSpacing)
     ) {
         topBar()
