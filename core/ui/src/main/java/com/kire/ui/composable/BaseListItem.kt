@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
 import coil3.compose.AsyncImage
 import com.kire.ui.Dimens.Corners.rounded1
 import com.kire.ui.Dimens.Padding.horizontal1
@@ -47,6 +48,7 @@ fun BaseListItem(
     onBaseListItemClick: () -> Unit = {},
     onActionButtonClick: () -> Unit = {}
 ) {
+
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -55,33 +57,36 @@ fun BaseListItem(
                 onBaseListItemClick()
             },
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.spacedBy(horizontal1)
     ) {
-        Row(
+        AsyncImage(
+            model = artwork,
+            contentDescription = "Artwork",
+            fallback = painterResource(R.drawable.artwork_placeholder),
+            contentScale = ContentScale.Crop,
             modifier = Modifier
-                .wrapContentSize(),
-            horizontalArrangement = Arrangement.spacedBy(horizontal1)
-        ) {
-            AsyncImage(
-                model = artwork,
-                contentDescription = "Artwork",
-                fallback = painterResource(R.drawable.artwork_placeholder),
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .size(artwork1)
-                    .clip(RoundedCornerShape(rounded1))
-            )
+                .size(artwork1)
+                .clip(RoundedCornerShape(rounded1))
+        )
 
-            Column {
-                Text(
-                    text = primaryText,
-                    style = extendedType.text1,
-                )
-                Text(
-                    text = secondaryText,
-                    style = extendedType.text2
-                )
-            }
+        Column(
+            modifier = Modifier
+                .weight(1f),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.Start
+        ) {
+            Text(
+                text = primaryText,
+                style = extendedType.text1,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+            Text(
+                text = secondaryText,
+                style = extendedType.text2,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
         }
 
         Icon(
