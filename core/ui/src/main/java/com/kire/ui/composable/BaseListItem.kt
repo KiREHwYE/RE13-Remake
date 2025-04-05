@@ -62,7 +62,7 @@ fun BaseListItem(
         AsyncImage(
             model = artwork,
             contentDescription = "Artwork",
-            fallback = painterResource(R.drawable.artwork_placeholder),
+            error = painterResource(R.drawable.artwork_placeholder),
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(artwork1)
