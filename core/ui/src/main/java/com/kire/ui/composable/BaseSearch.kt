@@ -44,7 +44,7 @@ fun BaseSearch(
             .fillMaxWidth()
             .clip(RoundedCornerShape(rounded1))
             .background(color = extendedColor.white)
-            .padding(vertical = vertical1),
+            .padding(vertical = vertical1, horizontal = horizontal2),
         horizontalArrangement = Arrangement.spacedBy(horizontal2)
     ) {
 
@@ -57,13 +57,16 @@ fun BaseSearch(
         BasicTextField(
             value = searchText,
             onValueChange = { searchText = it },
-            decorationBox = {
+            maxLines = 1,
+            decorationBox = { innerTextField ->
                 if (searchText.isEmpty())
                     Text(
                         text = "Search local music",
                         style = extendedType.text1,
                         color = extendedColor.grey1
                     )
+                innerTextField()
+
             },
             modifier = Modifier
                 .weight(1f)
