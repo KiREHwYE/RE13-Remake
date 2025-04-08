@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import com.kire.ui.Dimens.Padding.horizontal2
@@ -33,7 +34,8 @@ fun SearchWithMenu(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight(),
-        horizontalArrangement = Arrangement.spacedBy(horizontal2)
+        horizontalArrangement = Arrangement.spacedBy(horizontal2),
+        verticalAlignment = Alignment.CenterVertically
     ) {
         BaseSearch(Modifier.weight(1f))
 
