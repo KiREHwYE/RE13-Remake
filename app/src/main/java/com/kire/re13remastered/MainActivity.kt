@@ -14,6 +14,8 @@ import com.kire.data.DatabaseUpdater
 import com.kire.home.presentation.viewmodel.HomeViewModel
 import com.kire.home.presentation.viewmodel.HomeViewModelFactory
 import com.kire.ui.composable.BaseLayout
+import com.kire.ui.composable.SearchWithMenu
+import com.kire.ui.composable.TopBar
 import com.kire.ui.theme.RE13RemakeExtendedTheme
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -63,7 +65,16 @@ class MainActivity : ComponentActivity() {
 
                 val navHostController = rememberNavController()
 
-                BaseLayout {
+                BaseLayout(
+                    topBar = {
+                        TopBar(
+                            items = arrayOf(
+                                { SearchWithMenu() },
+                                { NavigationMenu(navHostController) }
+                            )
+                        )
+                    }
+                ) {
                     MainNavHost(
                         navHostController = navHostController,
                         homeViewModel = homeViewModel
