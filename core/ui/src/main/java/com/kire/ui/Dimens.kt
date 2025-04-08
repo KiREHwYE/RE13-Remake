@@ -23,6 +23,7 @@ object Dimens {
         val vertical1 = 8.dp
         val vertical2 = 16.dp
         val vertical3 = 24.dp
+        val vertical4 = 30.dp
     }
 
     /**
