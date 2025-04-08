@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.kire.ui.Dimens.Padding.horizontal2
 import com.kire.ui.Dimens.Padding.vertical4
 
 /**
@@ -29,7 +30,7 @@ fun TopBar(
         modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(vertical = vertical4),
+            .padding(vertical = vertical4, horizontal = horizontal2),
         verticalArrangement = Arrangement.spacedBy(vertical4)
     ) {
         items.forEach { item ->
