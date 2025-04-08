@@ -1,4 +1,4 @@
-package com.kire.re13remastered
+package com.kire.ui.composable
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -30,7 +30,8 @@ fun TopBar(
         modifier = modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(vertical = vertical4, horizontal = horizontal2),
+            .padding(horizontal = horizontal2)
+            .padding(top = vertical4),
         verticalArrangement = Arrangement.spacedBy(vertical4)
     ) {
         items.forEach { item ->

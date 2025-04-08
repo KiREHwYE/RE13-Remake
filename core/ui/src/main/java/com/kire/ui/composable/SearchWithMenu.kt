@@ -1,4 +1,4 @@
-package com.kire.re13remastered
+package com.kire.ui.composable
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import com.kire.ui.Dimens.Padding.horizontal2
 import com.kire.ui.R
-import com.kire.ui.composable.BaseSearch
 import com.kire.ui.theme.extendedColor
 
 /**
